@@ -1,4 +1,4 @@
-import { auth } from "./firebase";
+import { auth } from "../../firebase/firebase";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css";

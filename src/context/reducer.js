@@ -18,7 +18,7 @@ const reducer = (state, action) => {
         (basketItem) => basketItem.id === action.id
       );
       let newBasket = [...state.basket];
-      if (index > 0) {
+      if (index >= 0) {
         newBasket.splice(index, 1);
       } else {
         console.warn(
@@ -27,12 +27,17 @@ const reducer = (state, action) => {
       }
       return {
         ...state,
-        newBasket,
+        basket: newBasket,
       };
     case "SET_USER":
       return {
         ...state,
         user: action.user,
+      };
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket: [],
       };
     default:
       return state;
